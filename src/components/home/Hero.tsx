@@ -68,7 +68,7 @@ export function Hero() {
         </motion.div>
 
         {/* Main heading — word by word with playful delays */}
-        <h1 className="text-[clamp(3.5rem,12vw,10rem)] font-black leading-[1.1] sm:leading-[0.95] tracking-[-0.04em]">
+        <h1 className="text-[clamp(3rem,10vw,8rem)] font-black leading-[1.25] sm:leading-[1.15] tracking-[-0.02em]">
           {words.map((word, i) => (
             <motion.span
               key={i}
