@@ -1,0 +1,72 @@
+{
+  "blog": [
+    {
+      "value": "seo",
+      "label": "SEO"
+    },
+    {
+      "value": "uncategorized",
+      "label": "Uncategorized"
+    },
+    {
+      "value": "business",
+      "label": "ბიზნესი"
+    },
+    {
+      "value": "development",
+      "label": "დეველოპმენტი"
+    },
+    {
+      "value": "design",
+      "label": "დიზაინი"
+    },
+    {
+      "value": "tips",
+      "label": "რჩევები"
+    },
+    {
+      "value": "technology",
+      "label": "ტექნოლოგია"
+    }
+  ],
+  "portfolio": [
+    {
+      "value": "blog",
+      "label": "ბლოგი"
+    },
+    {
+      "value": "webapp",
+      "label": "ვებ აპლიკაცია"
+    },
+    {
+      "value": "corporate",
+      "label": "კორპორატიული"
+    },
+    {
+      "value": "landing",
+      "label": "ლენდინგი"
+    },
+    {
+      "value": "shop",
+      "label": "ონლაინ მაღაზია"
+    },
+    {
+      "value": "portal",
+      "label": "პორტალი"
+    }
+  ],
+  "faq": [
+    {
+      "value": "general",
+      "label": "ზოგადი"
+    },
+    {
+      "value": "technical",
+      "label": "ტექნიკური"
+    },
+    {
+      "value": "pricing",
+      "label": "ფასები"
+    }
+  ]
+}

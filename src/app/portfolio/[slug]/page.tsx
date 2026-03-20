@@ -4,6 +4,8 @@ import { TextReveal } from "@/components/animations/TextReveal";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/Button";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import wpProjects from "@/data/wp/projects.json";
+import wpCategories from "@/data/wp/categories.json";
 
 interface ProjectData {
   name: string;
@@ -16,41 +18,20 @@ interface ProjectData {
   externalUrl: string;
 }
 
-const PROJECTS: ProjectData[] = [
-  {
-    name: "GN.ge",
-    slug: "gn-ge",
-    category: "ონლაინ მაღაზია",
-    year: 2024,
-    client: "GN Georgia",
-    description:
-      "სრულფასოვანი ონლაინ მაღაზია ელექტრონიკისა და ტექნიკის გაყიდვისთვის. პლატფორმა მოიცავს მრავალენოვან მხარდაჭერას, მოწინავე ფილტრაციის სისტემას, კალათის მართვას და ინტეგრაციას სხვადასხვა გადახდის სისტემებთან. პროექტი ოპტიმიზებულია სიჩქარისა და SEO-სთვის.",
-    techStack: ["Next.js", "TypeScript", "WooCommerce", "WPML", "Tailwind CSS"],
-    externalUrl: "#",
-  },
-  {
-    name: "TBC კორპორატიული",
-    slug: "tbc-corporate",
-    category: "კორპორატიული",
-    year: 2024,
-    client: "TBC Bank",
-    description:
-      "კორპორატიული ვებსაიტი ბანკის ბიზნეს მომხმარებლებისთვის. პროექტი მოიცავს ინტერაქტიულ კალკულატორებს, პროდუქტების შედარების ფუნქციონალს, ფილიალების რუკას და ონლაინ განაცხადის სისტემას. დიზაინი მორგებულია ბრენდის სტანდარტებზე.",
-    techStack: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
-    externalUrl: "#",
-  },
-  {
-    name: "Capex Credit",
-    slug: "capex-credit",
-    category: "პორტალი",
-    year: 2023,
-    client: "Capex Finance",
-    description:
-      "ფინანსური პორტალი სესხების მართვისა და კრედიტ ინფოს ინტეგრაციით. მომხმარებლებს შეუძლიათ ონლაინ რეჟიმში განაცხადის შევსება, სესხის სტატუსის თვალყურის დევნება და პირადი კაბინეტის მართვა. სისტემა ინტეგრირებულია MyCreditInfo SSO-სთან.",
-    techStack: ["WordPress", "PHP", "MySQL", "REST API", "OAuth 2.0"],
-    externalUrl: "#",
-  },
-];
+const categoryLabelMap: Record<string, string> = Object.fromEntries(
+  wpCategories.portfolio.map((c: any) => [c.value, c.label])
+);
+
+const PROJECTS: ProjectData[] = wpProjects.map((p: any) => ({
+  name: p.name,
+  slug: p.slug,
+  category: p.categoryLabel || categoryLabelMap[p.category] || p.category || "პროექტი",
+  year: p.year ? Number(p.year) : 0,
+  client: p.name,
+  description: p.description || "",
+  techStack: p.techStack || [],
+  externalUrl: p.externalUrl || "#",
+}));
 
 const PROJECT_IMAGES: Record<string, { hero: string; gallery: string[] }> = {
   "gn-ge": {
@@ -80,11 +61,7 @@ const PROJECT_IMAGES: Record<string, { hero: string; gallery: string[] }> = {
 };
 
 export function generateStaticParams() {
-  return [
-    { slug: "gn-ge" },
-    { slug: "tbc-corporate" },
-    { slug: "capex-credit" },
-  ];
+  return wpProjects.map((p: any) => ({ slug: p.slug }));
 }
 
 function getProjectIndex(slug: string): number {

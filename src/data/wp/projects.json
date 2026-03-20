@@ -1,0 +1,261 @@
+[
+  {
+    "name": "ფინანსური პორტალი",
+    "slug": "finance-portal",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2023",
+    "description": "",
+    "techStack": [
+      "Next.js",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "name": "ტექნო მარკეტი",
+    "slug": "techno-market",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2024",
+    "description": "",
+    "techStack": [
+      "WooCommerce",
+      "React Native"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "name": "კრეატივ ჰაბი",
+    "slug": "creative-hub",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2022",
+    "description": "",
+    "techStack": [
+      "React",
+      "Firebase"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "name": "დაზღვევა.ge",
+    "slug": "dazghveva",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2023",
+    "description": "",
+    "techStack": [
+      "Laravel",
+      "Vue.js",
+      "MySQL"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "name": "სმარტ ჰოუმ",
+    "slug": "smart-home",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2024",
+    "description": "",
+    "techStack": [
+      "Astro",
+      "Tailwind CSS"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "name": "მეტრო ბლოგი",
+    "slug": "metro-blog",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2022",
+    "description": "",
+    "techStack": [
+      "WordPress",
+      "Elementor"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "name": "ფარმადეპო",
+    "slug": "pharmadepo",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2023",
+    "description": "",
+    "techStack": [
+      "WooCommerce",
+      "WordPress"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "name": "ავტოჰაბი",
+    "slug": "autohub",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2024",
+    "description": "",
+    "techStack": [
+      "Vue.js",
+      "Laravel",
+      "MySQL"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "name": "მაისტორი",
+    "slug": "maistori",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2023",
+    "description": "",
+    "techStack": [
+      "Next.js",
+      "Tailwind CSS"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "name": "Capex Credit",
+    "slug": "capex-credit",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2023",
+    "description": "",
+    "techStack": [
+      "WordPress",
+      "PHP",
+      "MySQL"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "name": "TBC კორპორატიული",
+    "slug": "tbc-corporate",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2024",
+    "description": "",
+    "techStack": [
+      "React",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "name": "GN.ge",
+    "slug": "gn-ge",
+    "category": "",
+    "categoryLabel": "",
+    "year": "2024",
+    "description": "",
+    "techStack": [
+      "WordPress",
+      "WooCommerce",
+      "React Native",
+      "WPML"
+    ],
+    "externalUrl": "#",
+    "image": null,
+    "content": "",
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  }
+]

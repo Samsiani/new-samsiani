@@ -1,0 +1,92 @@
+[
+  {
+    "title": "ციფრული მარკეტინგი",
+    "slug": "marketing",
+    "icon": "Code",
+    "description": "ონლაინ რეკლამა, სოციალური მედია, ელ-ფოსტა მარკეტინგი და ანალიტიკა.",
+    "href": "/services/marketing",
+    "body": "",
+    "image": null,
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "title": "მობილური აპლიკაციები",
+    "slug": "mobile",
+    "icon": "Code",
+    "description": "iOS და Android აპლიკაციების შექმნა React Native-ით — ერთი კოდბაზა, ორი პლატფორმა.",
+    "href": "/services/mobile",
+    "body": "",
+    "image": null,
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "title": "UI/UX დიზაინი",
+    "slug": "design",
+    "icon": "Code",
+    "description": "მომხმარებლისთვის მოხერხებული, ვიზუალურად მიმზიდველი ინტერფეისების დაპროექტება Figma-ში.",
+    "href": "/services/design",
+    "body": "",
+    "image": null,
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "title": "ტექნიკური მხარდაჭერა",
+    "slug": "support",
+    "icon": "Code",
+    "description": "საიტის უწყვეტი მუშაობის უზრუნველყოფა: განახლებები, backup-ები, უსაფრთხოება და სწრაფი რეაგირება.",
+    "href": "/services/support",
+    "body": "",
+    "image": null,
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "title": "SEO ოპტიმიზაცია",
+    "slug": "seo",
+    "icon": "Code",
+    "description": "Google-ში თქვენი საიტის პოზიციების გაუმჯობესება ტექნიკური SEO, კონტენტ-სტრატეგიისა და ლინკ-ბილდინგის მეშვეობით.",
+    "href": "/services/seo",
+    "body": "",
+    "image": null,
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
+    "title": "ვებ დეველოპმენტი",
+    "slug": "web",
+    "icon": "Code",
+    "description": "თანამედროვე, სწრაფი და მობილურზე ადაპტირებული ვებსაიტების შექმნა WordPress, React, Vue.js და Laravel ტექნოლოგიებით.",
+    "href": "/services/web",
+    "body": "",
+    "image": null,
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  }
+]

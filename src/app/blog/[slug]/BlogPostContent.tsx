@@ -5,72 +5,20 @@ import { ArrowLeft, ArrowRight, Facebook, Linkedin, Twitter, LinkIcon } from "lu
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { useToast } from "@/components/ui/Toast";
 
-interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  category: string;
-  categoryLabel: string;
-  readingTime: string;
-  body: string[];
-}
+import wpPosts from "@/data/wp/blog-posts.json";
 
-const POSTS: BlogPost[] = [
-  {
-    slug: "web-trends-2024",
-    title: "ვებ დეველოპმენტის ტრენდები 2024 წელს",
-    date: "2024-12-15",
-    category: "development",
-    categoryLabel: "დეველოპმენტი",
-    readingTime: "5 წთ",
-    body: [
-      "2024 წელი ვებ დეველოპმენტში მრავალი სიახლით და ცვლილებით გამოირჩეოდა. ტექნოლოგიური პროგრესი არნახული ტემპით მიმდინარეობს და თითოეული დეველოპერისთვის მნიშვნელოვანია, ფეხი აუწყოს უახლეს ტრენდებს.",
-      "React Server Components-მა ფუნდამენტურად შეცვალა ფრონტენდ არქიტექტურის მიდგომა. სერვერზე რენდერინგი კომპონენტის დონეზე საშუალებას იძლევა, მონაცემთა ფეჩინგი ოპტიმალურად მოხდეს — კლიენტზე გადაიგზავნოს მხოლოდ ინტერაქტიული ნაწილი.",
-      "Next.js 15-ის გამოსვლამ კიდევ უფრო გააძლიერა React ეკოსისტემა. Partial Prerendering ტექნოლოგია საშუალებას იძლევა, ერთი გვერდის ფარგლებში სტატიკური და დინამიური ნაწილები პარალელურად იმუშაოს.",
-      "ხელოვნური ინტელექტის ინტეგრაცია დეველოპმენტის პროცესში სტანდარტად იქცა. AI კოდის ასისტენტები დეველოპერების ყოველდღიურობის განუყოფელი ნაწილი გახდა.",
-      "CSS-ის ახალმა ფუნქციებმა, როგორიცაა Container Queries, :has() სელექტორი და CSS Nesting, მნიშვნელოვნად გაამარტივა სტილიზაციის პროცესი.",
-      "Edge Computing და სერვერლეს არქიტექტურა კიდევ ერთი მნიშვნელოვანი ტრენდია, რომელიც კოდს მომხმარებლის ყველაზე ახლოს მდებარე სერვერზე აშვებს.",
-    ],
-  },
-  {
-    slug: "seo-tips",
-    title: "SEO ოპტიმიზაციის 10 აუცილებელი რჩევა",
-    date: "2024-11-28",
-    category: "seo",
-    categoryLabel: "SEO",
-    readingTime: "7 წთ",
-    body: [
-      "საძიებო ოპტიმიზაცია (SEO) რჩება ციფრული მარკეტინგის ერთ-ერთ ყველაზე ეფექტურ და ხელმისაწვდომ არხად.",
-      "პირველი და უმთავრესი რჩევა: ფოკუსირდით მომხმარებლის ინტენტზე. Google-ის ალგორითმები უკვე იმდენად ჭკვიანია, რომ ამოიცნობენ, რა სურს მომხმარებელს.",
-      "ტექნიკური SEO ხშირად შეუმჩნეველი, მაგრამ კრიტიკულად მნიშვნელოვანი ფაქტორია. საიტის სიჩქარე, მობილური ადაპტივობა, SSL სერტიფიკატი და სწორი URL სტრუქტურა — ეს ყველაფერი ტექნიკური საფუძველია.",
-      "Core Web Vitals — Google-ის სამი ძირითადი მეტრიკა (LCP, FID, CLS) — პირდაპირ გავლენას ახდენს რანჟირებაზე.",
-      "კონტენტ-მარკეტინგი SEO-ს ხერხემალია. ხარისხიანი, ორიგინალური და დეტალური სტატიები ყოველთვის უპირატესობას ინარჩუნებენ.",
-      "სქემის მარკირება (Schema Markup) საშუალებას აძლევს საძიებო სისტემებს, უკეთ გაიგონ თქვენი კონტენტი.",
-      "ლოკალური SEO განსაკუთრებით მნიშვნელოვანია საქართველოს ბაზარზე მოქმედი ბიზნესებისთვის.",
-    ],
-  },
-  {
-    slug: "ui-ux-principles",
-    title: "UI/UX დიზაინის ფუნდამენტური პრინციპები",
-    date: "2024-11-10",
-    category: "design",
-    categoryLabel: "დიზაინი",
-    readingTime: "6 წთ",
-    body: [
-      "მომხმარებლის ინტერფეისის (UI) და მომხმარებლის გამოცდილების (UX) დიზაინი ციფრული პროდუქტის წარმატების განმსაზღვრელი ფაქტორია.",
-      "ვიზუალური იერარქია დიზაინის ერთ-ერთი ფუნდამენტური პრინციპია. ზომის, ფერის და კონტრასტის სწორი გამოყენებით შესაძლებელია მომხმარებლის ყურადღების მიმართვა.",
-      "თანმიმდევრულობა (Consistency) ნდობასა და ნაცნობობის განცდას ქმნის. დიზაინ სისტემის შექმნა უზრუნველყოფს ერთიან გამოცდილებას.",
-      "ხელმისაწვდომობა (Accessibility) არა მხოლოდ ეთიკური მოვალეობა, არამედ ბიზნეს-სარგებელია.",
-      "მიკრო-ინტერაქციები თანამედროვე ინტერფეისის განუყოფელი ნაწილია — ღილაკების ანიმაცია, ვალიდაციის უკუკავშირი, ჩატვირთვის ინდიკატორები.",
-      "რესპონსივ დიზაინი დღეს უკვე არა ტრენდი, არამედ სტანდარტია. Mobile-First მიდგომა საშუალებას იძლევა, შეიქმნას ინტერფეისი ყველა მოწყობილობისთვის.",
-    ],
-  },
-];
+const POSTS = wpPosts as any[];
 
 const POST_IMAGES: Record<string, string> = {
   "web-trends-2024": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80",
   "seo-tips": "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&q=80",
   "ui-ux-principles": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80",
+  "ecommerce-growth": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80",
+  "ai-web-development": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80",
+  "website-speed-optimization": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+  "react-vs-vue": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&q=80",
+  "brand-identity-digital": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&q=80",
+  "startup-website-checklist": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80",
 };
 
 const AUTHOR = {
@@ -144,23 +92,22 @@ export function BlogPostContent({ slug }: { slug: string }) {
               <span>&middot;</span>
               <span>{formatDate(post.date)}</span>
               <span>&middot;</span>
-              <span>{post.readingTime}</span>
+              <span>{post.readingTime} წთ</span>
             </div>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.25}>
           <div className="mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl">
-            <img src={POST_IMAGES[post.slug]} alt={post.title} loading="lazy" className="h-full w-full object-cover" />
+            <img src={post.image || POST_IMAGES[post.slug]} alt={post.title} loading="lazy" className="h-full w-full object-cover" />
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.3}>
-          <div className="prose dark:prose-invert mt-12 max-w-none prose-headings:font-bold prose-p:leading-relaxed prose-p:text-[var(--c-fg)] prose-a:text-[var(--c-accent)] prose-a:no-underline hover:prose-a:underline">
-            {post.body.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
-          </div>
+          <div
+            className="prose dark:prose-invert mt-12 max-w-none prose-headings:font-bold prose-p:leading-relaxed prose-p:text-[var(--c-fg)] prose-a:text-[var(--c-accent)] prose-a:no-underline hover:prose-a:underline"
+            dangerouslySetInnerHTML={{ __html: post.body }}
+          />
         </ScrollReveal>
 
         {/* Share buttons */}

@@ -1,11 +1,8 @@
 import { BlogPostContent } from "./BlogPostContent";
+import wpPosts from "@/data/wp/blog-posts.json";
 
 export function generateStaticParams() {
-  return [
-    { slug: "web-trends-2024" },
-    { slug: "seo-tips" },
-    { slug: "ui-ux-principles" },
-  ];
+  return wpPosts.map((p: any) => ({ slug: p.slug }));
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {

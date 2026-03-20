@@ -6,3 +6,5 @@ out_old/
 out_old2/
 .DS_Store
 *.tsbuildinfo
+.sanity/
+dist/

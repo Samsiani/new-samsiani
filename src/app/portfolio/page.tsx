@@ -7,31 +7,20 @@ import { TextReveal } from "@/components/animations/TextReveal";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { FilterBar } from "@/components/ui/FilterBar";
 import { Pagination } from "@/components/ui/Pagination";
+import wpProjects from "@/data/wp/projects.json";
+import wpCategories from "@/data/wp/categories.json";
 
 const CATEGORIES = [
   { value: "all", label: "ყველა" },
-  { value: "shop", label: "ონლაინ მაღაზია" },
-  { value: "corporate", label: "კორპორატიული" },
-  { value: "landing", label: "ლენდინგი" },
-  { value: "webapp", label: "ვებ აპლიკაცია" },
-  { value: "portal", label: "პორტალი" },
-  { value: "blog", label: "ბლოგი" },
+  ...wpCategories.portfolio,
 ];
 
-const PROJECTS = [
-  { name: "GN.ge", slug: "gn-ge", category: "shop", year: 2024 },
-  { name: "TBC კორპორატიული", slug: "tbc-corporate", category: "corporate", year: 2024 },
-  { name: "Capex Credit", slug: "capex-credit", category: "portal", year: 2023 },
-  { name: "მაისტორი", slug: "maistori", category: "landing", year: 2023 },
-  { name: "ავტოჰაბი", slug: "autohub", category: "webapp", year: 2024 },
-  { name: "ფარმადეპო", slug: "pharmadepo", category: "shop", year: 2023 },
-  { name: "მეტრო ბლოგი", slug: "metro-blog", category: "blog", year: 2022 },
-  { name: "სმარტ ჰოუმ", slug: "smart-home", category: "landing", year: 2024 },
-  { name: "დაზღვევა.ge", slug: "dazghveva", category: "portal", year: 2023 },
-  { name: "კრეატივ ჰაბი", slug: "creative-hub", category: "webapp", year: 2022 },
-  { name: "ტექნო მარკეტი", slug: "techno-market", category: "shop", year: 2024 },
-  { name: "ფინანსური პორტალი", slug: "finance-portal", category: "corporate", year: 2023 },
-];
+const PROJECTS = wpProjects.map((p: any) => ({
+  name: p.name,
+  slug: p.slug,
+  category: p.category || "",
+  year: p.year ? Number(p.year) : 0,
+}));
 
 const PROJECT_IMAGES: Record<string, string> = {
   "gn-ge": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
@@ -142,7 +131,7 @@ export default function PortfolioPage() {
                         {/* Project info */}
                         <div className="absolute inset-x-0 bottom-0 z-20 p-5 md:p-6">
                           <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/70">
-                            {CATEGORIES.find((c) => c.value === project.category)?.label} &middot; {project.year}
+                            {CATEGORIES.find((c) => c.value === project.category)?.label || project.category || "პროექტი"}{project.year ? ` \u00B7 ${project.year}` : ""}
                           </p>
                           <h3 className="mt-1 text-xl font-bold text-white">{project.name}</h3>
                         </div>
