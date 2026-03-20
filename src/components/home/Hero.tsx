@@ -68,7 +68,7 @@ export function Hero() {
         </motion.div>
 
         {/* Main heading — word by word with playful delays */}
-        <h1 className="text-[clamp(3.5rem,12vw,10rem)] font-black leading-[1] sm:leading-[0.85] tracking-[-0.04em]">
+        <h1 className="text-[clamp(3.5rem,12vw,10rem)] font-black leading-[1.1] sm:leading-[0.95] tracking-[-0.04em]">
           {words.map((word, i) => (
             <motion.span
               key={i}
@@ -135,16 +135,17 @@ export function Hero() {
         transition={{ delay: 1.6 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <motion.div
+        <motion.button
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2"
+          className="flex cursor-pointer flex-col items-center gap-2 border-none bg-transparent"
         >
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--c-fg-muted)]">
             ჩამოსქროლე
           </span>
           <ArrowDown size={16} className="text-[var(--c-accent)]" />
-        </motion.div>
+        </motion.button>
       </motion.div>
     </section>
   );
