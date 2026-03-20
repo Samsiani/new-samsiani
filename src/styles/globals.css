@@ -1,0 +1,379 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* === BASE PALETTE === */
+  --color-bg: #f8f6f1;
+  --color-bg-secondary: #efece4;
+  --color-fg: #1a1816;
+  --color-fg-muted: #6b6560;
+  --color-accent: #e63b2e;
+  --color-accent-hover: #c42d22;
+  --color-border: #ddd8cf;
+  --color-border-strong: #ccc5ba;
+  --color-surface: #fffef9;
+
+  --color-dark-bg: #0d0c0a;
+  --color-dark-bg-secondary: #1a1816;
+  --color-dark-fg: #f0ece4;
+  --color-dark-fg-muted: #9b9590;
+  --color-dark-accent: #ff5142;
+  --color-dark-accent-hover: #ff7a6e;
+  --color-dark-border: #2a2725;
+  --color-dark-border-strong: #3a3632;
+  --color-dark-surface: #1a1816;
+  --color-dark-surface-raised: #1e1c19;
+
+  --font-sans: "Noto Sans Georgian", system-ui, sans-serif;
+
+  /* === FLUID TYPOGRAPHY SCALE === */
+  /* clamp(min, fluid, max) — scales linearly between viewport breakpoints */
+  --text-display: clamp(3.5rem, 8vw + 1rem, 8.5rem);     /* Hero H1 */
+  --text-hero:    clamp(2.5rem, 5vw + 1rem, 5.5rem);     /* Page hero headings */
+  --text-h2:      clamp(1.875rem, 3.5vw + 0.5rem, 3.5rem); /* Section H2s */
+  --text-h3:      clamp(1.25rem, 2vw + 0.25rem, 1.875rem); /* H3s */
+  --text-overline: 0.6875rem; /* 11px — uppercase labels */
+
+  /* === LINE HEIGHT SCALE === */
+  --leading-display: 0.93;   /* Ultra-tight for display text */
+  --leading-heading: 1.08;   /* Tight for H2/H3 */
+  --leading-body:    1.72;   /* Relaxed, readable prose */
+  --leading-ui:      1.4;    /* Buttons, labels, nav */
+
+  /* === LETTER SPACING SCALE === */
+  --tracking-display:  -0.03em;
+  --tracking-heading:  -0.02em;
+  --tracking-overline:  0.2em;  /* Uppercase overlines — enforced everywhere */
+}
+
+/* === CSS VARIABLE MAPS === */
+:root {
+  --c-bg:            var(--color-bg);
+  --c-bg2:           var(--color-bg-secondary);
+  --c-fg:            var(--color-fg);
+  --c-fg-muted:      var(--color-fg-muted);
+  --c-accent:        var(--color-accent);
+  --c-accent-hover:  var(--color-accent-hover);
+  --c-border:        var(--color-border);
+  --c-border-strong: var(--color-border-strong);
+  --c-surface:       var(--color-surface);
+  --c-surface-raised: var(--color-surface);
+
+  /* === EASING VOCABULARY === */
+  --ease-apple:  cubic-bezier(0.16, 1, 0.3, 1);      /* Buttery deceleration — primary */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);       /* Balanced in-out */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);  /* Subtle overshoot */
+  --ease-in:     cubic-bezier(0.4, 0, 1, 1);         /* Accelerate in */
+  --ease-out:    cubic-bezier(0, 0, 0.2, 1);         /* Decelerate out */
+  --ease-sketchy: cubic-bezier(0.77, 0, 0.175, 1);   /* Original sketchy feel — kept */
+
+  /* === DURATION SCALE === */
+  --duration-fast:   200ms;
+  --duration-normal: 400ms;
+  --duration-slow:   700ms;
+  --duration-xslow:  1200ms;
+}
+
+.dark {
+  --c-bg:            var(--color-dark-bg);
+  --c-bg2:           var(--color-dark-bg-secondary);
+  --c-fg:            var(--color-dark-fg);
+  --c-fg-muted:      var(--color-dark-fg-muted);
+  --c-accent:        var(--color-dark-accent);
+  --c-accent-hover:  var(--color-dark-accent-hover);
+  --c-border:        var(--color-dark-border);
+  --c-border-strong: var(--color-dark-border-strong);
+  --c-surface:       var(--color-dark-surface);
+  --c-surface-raised: var(--color-dark-surface-raised);
+}
+
+/* === BASE LAYER === */
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: var(--c-bg);
+    color: var(--c-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Solid opaque strip behind notch / Dynamic Island */
+  .safe-header {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .safe-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top, 0px);
+    background-color: var(--c-bg);
+    z-index: 1;
+  }
+
+  /* Heading baseline defaults — components can override */
+  h1, h2, h3 {
+    letter-spacing: var(--tracking-heading);
+    line-height: var(--leading-heading);
+  }
+
+  h1 {
+    letter-spacing: var(--tracking-display);
+    line-height: var(--leading-display);
+  }
+
+  /* Only unstyled paragraphs get body defaults — doesn't affect layout paragraphs */
+  p:not([class]) {
+    line-height: var(--leading-body);
+    max-width: 65ch;
+  }
+}
+
+/* === SELECTION === */
+::selection {
+  background-color: var(--c-accent);
+  color: white;
+}
+
+/* ================================================
+   STORYTELLER PERSONALITY
+   ================================================ */
+
+/* --- Grain — analog/tactile texture overlay --- */
+/* baseFrequency 0.65 → coarser, more artisanal grain than 0.75 */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  z-index: 9990;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.dark .grain::after {
+  opacity: 0.055;
+  mix-blend-mode: overlay;
+}
+
+/* --- Sketchy underline — hand-drawn link effect --- */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: -2px;
+  right: -2px;
+  height: 2px;
+  background: var(--c-accent);
+  transform: scaleX(0) rotate(-0.5deg);
+  transform-origin: right;
+  border-radius: 2px;
+  transition: transform var(--duration-normal) var(--ease-apple);
+}
+.link-underline:hover::after {
+  transform: scaleX(1) rotate(-0.5deg);
+  transform-origin: left;
+}
+
+/* --- Glitch text effect — subtler, more professional --- */
+@keyframes glitch {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  15%       { clip-path: inset(25% 0 55% 0); transform: translate(-1.5px, 0.5px); }
+  30%       { clip-path: inset(60% 0 15% 0); transform: translate(1.5px, -0.5px); }
+  45%       { clip-path: inset(10% 0 65% 0); transform: translate(-1px, 1px); }
+  60%       { clip-path: inset(45% 0 25% 0); transform: translate(1px, -1px); }
+  75%       { clip-path: inset(0 0 0 0); transform: translate(0); }
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.5s var(--ease-smooth);
+}
+
+/* --- Wiggle --- */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25%       { transform: rotate(-1.5deg); }
+  75%       { transform: rotate(1.5deg); }
+}
+
+.hover-wiggle:hover {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+/* --- Float — slower = more luxurious --- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* --- Sketch border --- */
+.sketch-border {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: 2px solid var(--c-fg);
+}
+
+.sketch-border-accent {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: 2px solid var(--c-accent);
+}
+
+/* --- Scratchy underline for headings --- */
+.scratchy-underline {
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='12' viewBox='0 0 200 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 8C20 3 40 10 60 6C80 2 100 9 120 5C140 1 160 8 180 4C190 2 200 6 200 6' stroke='%23e63b2e' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-position: bottom center;
+  background-repeat: repeat-x;
+  background-size: 200px 12px;
+  padding-bottom: 8px;
+}
+
+.dark .scratchy-underline {
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='12' viewBox='0 0 200 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 8C20 3 40 10 60 6C80 2 100 9 120 5C140 1 160 8 180 4C190 2 200 6 200 6' stroke='%23ff5142' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* --- Tape / sticky note effect --- */
+.tape::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 80px;
+  height: 24px;
+  background: rgba(200, 190, 170, 0.5);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+/* --- Scribble circle highlight --- */
+.scribble-circle {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='60' viewBox='0 0 120 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='60' cy='30' rx='56' ry='26' stroke='%23e63b2e' stroke-width='2' stroke-dasharray='4 3' transform='rotate(-2 60 30)'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 8px 16px;
+}
+
+.dark .scribble-circle {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='60' viewBox='0 0 120 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='60' cy='30' rx='56' ry='26' stroke='%23ff5142' stroke-width='2' stroke-dasharray='4 3' transform='rotate(-2 60 30)'/%3E%3C/svg%3E");
+}
+
+/* --- Form input hover state --- */
+.form-input-hover:hover:not(:focus) {
+  border-color: var(--c-fg-muted);
+}
+
+/* ================================================
+   MARQUEE
+   ================================================ */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ================================================
+   UTILITY LAYER — Design token classes
+   ================================================ */
+@layer utilities {
+  /* Fluid type scale */
+  .text-display  { font-size: var(--text-display); }
+  .text-hero     { font-size: var(--text-hero); }
+  .text-h2       { font-size: var(--text-h2); }
+  .text-h3       { font-size: var(--text-h3); }
+  .text-overline { font-size: var(--text-overline); }
+
+  /* Line height tokens */
+  .leading-display { line-height: var(--leading-display); }
+  .leading-heading { line-height: var(--leading-heading); }
+  .leading-body    { line-height: var(--leading-body); }
+  .leading-ui      { line-height: var(--leading-ui); }
+
+  /* Letter spacing tokens */
+  .tracking-display  { letter-spacing: var(--tracking-display); }
+  .tracking-heading  { letter-spacing: var(--tracking-heading); }
+  .tracking-overline { letter-spacing: var(--tracking-overline); }
+
+  /* Premium transition shorthand */
+  .transition-apple {
+    transition-property: transform, opacity, color, background-color, border-color, box-shadow;
+    transition-timing-function: var(--ease-apple);
+    transition-duration: var(--duration-normal);
+  }
+
+  /* Surface with depth — for dark mode cards */
+  .bg-surface-raised { background-color: var(--c-surface-raised); }
+  .border-strong     { border-color: var(--c-border-strong); }
+}
+
+/* ================================================
+   ACCESSIBILITY
+   ================================================ */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  padding: 0.75rem 1.5rem;
+  background: var(--c-accent);
+  color: white;
+  border-radius: 0 0 0.5rem 0.5rem;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* ================================================
+   SCROLLBAR
+   ================================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--c-bg2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-accent);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+/* ================================================
+   REDUCED MOTION
+   ================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+.claude/
+.next/
+out/
+out_old/
+out_old2/
+.DS_Store
+*.tsbuildinfo
