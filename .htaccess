@@ -1,13 +1,16 @@
 RewriteEngine On
 
-# If the request is for a file or directory that exists, serve it
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
+# If it's a real file (not directory), serve it
+RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
-# Try adding .html extension
+# If .html version exists, serve it (priority over directories)
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
 
-# Fallback to 404 page
+# Strip trailing slash (except root)
+RewriteCond %{REQUEST_URI} !^/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# Fallback to 404
 RewriteRule ^ /404.html [L]
