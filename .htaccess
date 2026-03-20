@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# If the request is for a file or directory that exists, serve it
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Try adding .html extension
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Fallback to 404 page
+RewriteRule ^ /404.html [L]
