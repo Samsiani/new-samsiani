@@ -1,16 +1,16 @@
 RewriteEngine On
 
-# If it's a real file (not directory), serve it
+# Serve existing files directly
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
-# If .html version exists, serve it (priority over directories)
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [L]
+# Serve existing directories (with index.html)
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
 
-# Strip trailing slash (except root)
-RewriteCond %{REQUEST_URI} !^/$
-RewriteRule ^(.+)/$ /$1 [R=301,L]
+# Add trailing slash if directory exists
+RewriteCond %{REQUEST_FILENAME}/ -d
+RewriteRule ^(.+[^/])$ /$1/ [R=301,L]
 
 # Fallback to 404
-RewriteRule ^ /404.html [L]
+ErrorDocument 404 /404/index.html
