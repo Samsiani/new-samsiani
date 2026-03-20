@@ -6,7 +6,7 @@
  * Usage: node scripts/fetch-content.mjs
  */
 
-import { writeFileSync, mkdirSync } from 'fs'
+import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -28,7 +28,7 @@ async function fetchAll(endpoint, params = {}) {
     url.searchParams.set('page', String(page))
     Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, String(v)))
     let res
-    for (let attempt = 0; attempt < 3; attempt++) {
+    for (let attempt = 0; attempt < 5; attempt++) {
       res = await fetch(url.toString(), {
         headers: {
         'User-Agent': 'Samsiani-NextJS-Build/1.0',
@@ -36,7 +36,7 @@ async function fetchAll(endpoint, params = {}) {
       }
       })
       if (res.ok) break
-      await sleep(1000 * (attempt + 1))
+      await sleep(2000 * (attempt + 1))
     }
     if (!res.ok) {
       if (page === 1) console.warn(`⚠ Failed to fetch ${endpoint}: ${res.status}`)
@@ -58,13 +58,13 @@ function stripHtml(html) {
 async function main() {
   console.log('📥 Fetching content from WordPress...\n')
 
-  // Fetch all content types sequentially to avoid Cloudflare rate limits
-  const posts = await fetchAll('posts')
-  const portfolio = await fetchAll('portfolio')
-  const faqs = await fetchAll('faqs')
-  const services = await fetchAll('services')
-  const categories = await fetchAll('categories')
-  const portfolioCategories = await fetchAll('portfolio-categories')
+  // Fetch all content types sequentially with delays to avoid Cloudflare rate limits
+  const posts = await fetchAll('posts'); await sleep(500)
+  const portfolio = await fetchAll('portfolio'); await sleep(500)
+  const faqs = await fetchAll('faqs'); await sleep(500)
+  const services = await fetchAll('services'); await sleep(500)
+  const categories = await fetchAll('categories'); await sleep(500)
+  const portfolioCategories = await fetchAll('portfolio-categories'); await sleep(500)
   const faqCategories = await fetchAll('faq-categories')
 
   // Build category lookup maps
@@ -133,9 +133,19 @@ async function main() {
   }
 
   for (const [filename, data] of Object.entries(files)) {
-    const path = join(DATA_DIR, filename)
-    writeFileSync(path, JSON.stringify(data, null, 2))
+    const filePath = join(DATA_DIR, filename)
     const count = Array.isArray(data) ? data.length : Object.keys(data).length
+    // Only overwrite if we got data, otherwise keep existing file
+    if (Array.isArray(data) && data.length === 0 && existsSync(filePath)) {
+      try {
+        const existing = JSON.parse(readFileSync(filePath, 'utf8'))
+        if (Array.isArray(existing) && existing.length > 0) {
+          console.log(`  ⏭ ${filename} — fetch returned 0, keeping existing (${existing.length} items)`)
+          continue
+        }
+      } catch {}
+    }
+    writeFileSync(filePath, JSON.stringify(data, null, 2))
     console.log(`  ✅ ${filename} (${count} items)`)
   }
 
