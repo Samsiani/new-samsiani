@@ -102,7 +102,7 @@ export function Footer() {
       <div className="border-t border-[var(--c-border)] py-6">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-center text-xs text-[var(--c-fg-muted)]">
-            © {new Date().getFullYear()} SAMSIANI. ხელნაკეთი სიყვარულით თბილისში 🇬🇪
+            © {new Date().getFullYear()} SAMSIANI. ხელნაკეთი სიყვარულით თბილისში
           </p>
         </div>
       </div>

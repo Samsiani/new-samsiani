@@ -45,7 +45,7 @@ export function Header() {
             : "bg-transparent"
         )}
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           {/* Wordmark */}
           <Link href="/" className="text-lg font-black tracking-[-0.02em]">
             SAMSIANI<span className="text-[var(--c-accent)]">.</span>

@@ -90,7 +90,7 @@ export default async function ProjectPage({
   return (
     <>
       {/* Hero */}
-      <section className="px-6 pt-32 pb-16 md:pt-44 md:pb-20">
+      <section className="px-6 pt-32 pb-20 md:pt-44 md:pb-28">
         <div className="mx-auto max-w-7xl">
           <ScrollReveal>
             <Link
@@ -114,10 +114,12 @@ export default async function ProjectPage({
                 {project.category}
               </span>
               <span className="text-sm text-[var(--c-fg-muted)]">{project.year}</span>
-              <Button href={project.externalUrl} variant="outline" size="sm">
-                <ExternalLink size={14} />
-                ვებსაიტის ნახვა
-              </Button>
+              {project.externalUrl && project.externalUrl !== "#" && (
+                <Button href={project.externalUrl} variant="outline" size="sm">
+                  <ExternalLink size={14} />
+                  ვებსაიტის ნახვა
+                </Button>
+              )}
             </div>
           </ScrollReveal>
         </div>

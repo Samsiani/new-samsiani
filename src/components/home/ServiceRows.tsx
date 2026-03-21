@@ -60,7 +60,7 @@ export function ServiceRows() {
 
               <service.icon
                 size={22}
-                className={`relative z-10 shrink-0 transition-all duration-300 ${hovered === i ? "scale-125 text-white" : "text-[var(--c-accent)]"}`}
+                className={`relative z-10 shrink-0 transition-colors duration-300 ${hovered === i ? "text-white" : "text-[var(--c-accent)]"}`}
               />
 
               <h3 className={`relative z-10 flex-1 text-xl font-bold tracking-tight transition-all duration-300 md:text-2xl lg:text-3xl ${

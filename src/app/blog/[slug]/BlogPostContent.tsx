@@ -64,7 +64,7 @@ export function BlogPostContent({ slug }: { slug: string }) {
   };
 
   return (
-    <article className="px-6 pt-32 pb-16 md:pt-44">
+    <article className="px-6 pt-32 pb-20 md:pt-44 md:pb-28">
       <div className="mx-auto max-w-3xl">
         <ScrollReveal>
           <Link href="/blog" className="mb-8 inline-flex items-center gap-2 text-sm text-[var(--c-fg-muted)] transition-colors hover:text-[var(--c-accent)]">

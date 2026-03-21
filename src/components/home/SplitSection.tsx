@@ -50,7 +50,7 @@ export function SplitSection() {
         {/* Right — Stats with sketchy borders */}
         <div className="space-y-10">
           {[
-            { value: 15, suffix: "+", label: "წლიანი გამოცდილება", icon: Clock },
+            { value: 17, suffix: "+", label: "წლიანი გამოცდილება", icon: Clock },
             { value: 300, suffix: "+", label: "დასრულებული პროექტი", icon: Target },
             { value: 150, suffix: "+", label: "კმაყოფილი კლიენტი", icon: Users },
           ].map((stat, i) => (

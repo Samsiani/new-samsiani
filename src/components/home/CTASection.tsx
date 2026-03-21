@@ -55,7 +55,7 @@ export function CTASection() {
               მოგვწერეთ <ArrowRight size={16} className="inline" />
             </Button>
             <span className="text-sm text-[var(--c-fg-muted)]">ან</span>
-            <a href="tel:+995555123456" className="link-underline text-sm font-semibold">
+            <a href="tel:+995555123456" className="text-sm font-semibold transition-colors hover:text-[var(--c-accent)]">
               დაგვირეკეთ →
             </a>
           </div>
