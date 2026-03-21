@@ -67,7 +67,7 @@
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);  /* Subtle overshoot */
   --ease-in:     cubic-bezier(0.4, 0, 1, 1);         /* Accelerate in */
   --ease-out:    cubic-bezier(0, 0, 0.2, 1);         /* Decelerate out */
-  --ease-sketchy: cubic-bezier(0.77, 0, 0.175, 1);   /* Original sketchy feel — kept */
+  --ease-sketchy: cubic-bezier(0.4, 0, 0.2, 1);       /* Replaced with smooth in-out */
 
   /* === DURATION SCALE === */
   --duration-fast:   200ms;
@@ -188,40 +188,7 @@
   transform-origin: left;
 }
 
-/* --- Glitch text effect — subtler, more professional --- */
-@keyframes glitch {
-  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
-  15%       { clip-path: inset(25% 0 55% 0); transform: translate(-1.5px, 0.5px); }
-  30%       { clip-path: inset(60% 0 15% 0); transform: translate(1.5px, -0.5px); }
-  45%       { clip-path: inset(10% 0 65% 0); transform: translate(-1px, 1px); }
-  60%       { clip-path: inset(45% 0 25% 0); transform: translate(1px, -1px); }
-  75%       { clip-path: inset(0 0 0 0); transform: translate(0); }
-}
-
-.glitch-hover:hover {
-  animation: glitch 0.5s var(--ease-smooth);
-}
-
-/* --- Wiggle --- */
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25%       { transform: rotate(-1.5deg); }
-  75%       { transform: rotate(1.5deg); }
-}
-
-.hover-wiggle:hover {
-  animation: wiggle 0.3s ease-in-out;
-}
-
-/* --- Float — slower = more luxurious --- */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
+/* --- Glitch / Wiggle / Float removed for solid, stable feel --- */
 
 /* --- Sketch border --- */
 .sketch-border {

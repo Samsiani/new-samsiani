@@ -31,13 +31,9 @@ export function ServiceRows() {
               ყველაფერი, რაც <span className="scratchy-underline">ციფრულია</span>
             </h2>
           </div>
-          <motion.div
-            className="hidden md:block"
-            animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
+          <div className="hidden md:block">
             <Palette size={40} className="text-[var(--c-accent)] opacity-30" />
-          </motion.div>
+          </div>
         </div>
       </ScrollReveal>
 

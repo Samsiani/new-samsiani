@@ -64,8 +64,8 @@ export function SplitSection() {
             <ScrollReveal key={stat.label} delay={0.12 * i} direction="right">
               <motion.div
                 className="flex items-center gap-5 rounded-2xl border border-[var(--c-border)] bg-[var(--c-surface)] p-6"
-                whileHover={{ rotate: i % 2 === 0 ? 1 : -1, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                whileHover={{ y: -2 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <stat.icon size={28} className="shrink-0 text-[var(--c-accent)]" />
                 <StatsCounter
