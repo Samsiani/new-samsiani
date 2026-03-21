@@ -45,7 +45,7 @@ export function ServiceRows() {
           <ScrollReveal key={service.num} delay={i * 0.04}>
             <Link
               href={service.href}
-              className="group relative flex items-center gap-5 border-b border-[var(--c-border)] py-6 md:py-8"
+              className="group relative flex items-center gap-5 border-b border-[var(--c-border)] px-5 py-6 md:px-6 md:py-8"
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
             >
