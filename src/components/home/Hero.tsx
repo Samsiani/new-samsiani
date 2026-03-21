@@ -63,7 +63,7 @@ export function Hero() {
           className="mb-8 inline-block"
         >
           <span className="sketch-border-accent inline-block px-3 py-1.5 text-xs font-bold uppercase tracking-[0.1em] sm:px-5 sm:py-2 sm:tracking-[0.2em] text-[var(--c-accent)]">
-            ციფრული სააგენტო · 2009 წლიდან
+            ციფრული სააგენტო · 2015 წლიდან
           </span>
         </motion.div>
 

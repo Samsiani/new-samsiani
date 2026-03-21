@@ -7,7 +7,7 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { StatsCounter } from "@/components/animations/StatsCounter";
 import wpProjects from "@/data/wp/projects.json";
 
-const FOUNDED_YEAR = 2009;
+const FOUNDED_YEAR = 2015;
 const portfolioCount = wpProjects.length;
 const yearsExperience = new Date().getFullYear() - FOUNDED_YEAR;
 const completedProjects = portfolioCount * 8 + 4;
@@ -43,7 +43,7 @@ export function SplitSection() {
                 >
                   20
                 </span>
-                <span className="text-[var(--c-accent)]">09</span>
+                <span className="text-[var(--c-accent)]">15</span>
               </span>
             </motion.div>
             <p className="mt-8 max-w-md text-lg leading-relaxed text-[var(--c-fg-muted)]">
