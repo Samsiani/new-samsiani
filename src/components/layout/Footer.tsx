@@ -16,6 +16,7 @@ const footerNav = [
 
 const footerServices = [
   { label: "ვებ დეველოპმენტი", href: "/services/web" },
+  { label: "AI ავტომატიზაცია", href: "/services/ai" },
   { label: "SEO ოპტიმიზაცია", href: "/services/seo" },
   { label: "ტექნიკური მხარდაჭერა", href: "/services/support" },
 ];
