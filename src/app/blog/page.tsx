@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Calendar, ArrowRight } from "lucide-react";
@@ -61,7 +61,18 @@ const POPULAR = POSTS.filter((p) => POPULAR_SLUGS.includes(p.slug));
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchInput, setSearchInput] = useState("");
   const [search, setSearch] = useState("");
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+  useEffect(() => {
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      setSearch(searchInput.trim().length >= 3 ? searchInput : "");
+      setCurrentPage(1);
+    }, 400);
+    return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
+  }, [searchInput]);
 
   const filtered = useMemo(() => {
     let result = POSTS;
@@ -253,12 +264,9 @@ export default function BlogPage() {
                     />
                     <input
                       type="text"
-                      value={search}
-                      onChange={(e) => {
-                        setSearch(e.target.value);
-                        setCurrentPage(1);
-                      }}
-                      placeholder="სტატიის ძიება..."
+                      value={searchInput}
+                      onChange={(e) => setSearchInput(e.target.value)}
+                      placeholder="მინ. 3 სიმბოლო..."
                       className="w-full rounded-full border border-[var(--c-border)] bg-transparent py-2.5 pr-4 pl-10 text-base outline-none transition-colors focus:border-[var(--c-accent)] form-input-hover"
                     />
                   </div>
