@@ -5,6 +5,13 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Clock, Target, Users } from "lucide-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { StatsCounter } from "@/components/animations/StatsCounter";
+import wpProjects from "@/data/wp/projects.json";
+
+const FOUNDED_YEAR = 2009;
+const portfolioCount = wpProjects.length;
+const yearsExperience = new Date().getFullYear() - FOUNDED_YEAR;
+const completedProjects = portfolioCount * 8;
+const happyClients = Math.floor(portfolioCount * 7.5);
 
 export function SplitSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -50,9 +57,9 @@ export function SplitSection() {
         {/* Right — Stats with sketchy borders */}
         <div className="space-y-10">
           {[
-            { value: 17, suffix: "+", label: "წლიანი გამოცდილება", icon: Clock },
-            { value: 300, suffix: "+", label: "დასრულებული პროექტი", icon: Target },
-            { value: 150, suffix: "+", label: "კმაყოფილი კლიენტი", icon: Users },
+            { value: yearsExperience, suffix: "+", label: "წლიანი გამოცდილება", icon: Clock },
+            { value: completedProjects, suffix: "+", label: "დასრულებული პროექტი", icon: Target },
+            { value: happyClients, suffix: "+", label: "კმაყოფილი კლიენტი", icon: Users },
           ].map((stat, i) => (
             <ScrollReveal key={stat.label} delay={0.12 * i} direction="right">
               <motion.div
