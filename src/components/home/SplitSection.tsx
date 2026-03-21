@@ -10,8 +10,8 @@ import wpProjects from "@/data/wp/projects.json";
 const FOUNDED_YEAR = 2009;
 const portfolioCount = wpProjects.length;
 const yearsExperience = new Date().getFullYear() - FOUNDED_YEAR;
-const completedProjects = portfolioCount * 8;
-const happyClients = Math.floor(portfolioCount * 7.5);
+const completedProjects = portfolioCount * 8 + 4;
+const happyClients = Math.floor(portfolioCount * 7.5 + 3);
 
 export function SplitSection() {
   const ref = useRef<HTMLDivElement>(null);
