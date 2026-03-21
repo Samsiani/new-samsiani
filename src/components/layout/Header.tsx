@@ -40,10 +40,10 @@ export function Header() {
     <>
       <header
         className={cn(
-          "safe-header fixed left-0 right-0 top-0 z-50 transition-all duration-300",
+          "safe-header fixed left-0 right-0 top-0 z-[100] transition-all duration-300",
           scrolled
-            ? "border-b border-[var(--c-border)] bg-[var(--c-bg)]/80 backdrop-blur-xl"
-            : "bg-transparent"
+            ? "border-b border-[var(--c-border)] bg-[var(--c-bg)]/95 backdrop-blur-xl"
+            : "bg-[var(--c-bg)]"
         )}
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
