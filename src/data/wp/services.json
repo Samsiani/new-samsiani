@@ -1,5 +1,20 @@
 [
   {
+    "title": "AI ავტომატიზაცია",
+    "slug": "ai",
+    "icon": "Code",
+    "description": "ჩატბოტები, ბიზნეს პროცესების ავტომატიზაცია, კონტენტის გენერაცია და მონაცემთა ანალიტიკა ხელოვნური ინტელექტის ტექნოლოგიებით.",
+    "href": "/services/ai",
+    "body": "",
+    "image": null,
+    "seo": {
+      "title": "",
+      "description": "",
+      "focus_keyword": "",
+      "canonical_url": ""
+    }
+  },
+  {
     "title": "ციფრული მარკეტინგი",
     "slug": "marketing",
     "icon": "Code",

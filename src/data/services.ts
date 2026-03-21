@@ -18,6 +18,13 @@ export const services: ServiceOverview[] = [
     href: "/services/web",
   },
   {
+    icon: "Bot",
+    title: "AI ავტომატიზაცია",
+    description:
+      "ჩატბოტები, ბიზნეს პროცესების ავტომატიზაცია, კონტენტის გენერაცია და მონაცემთა ანალიტიკა ხელოვნური ინტელექტის ტექნოლოგიებით.",
+    href: "/services/ai",
+  },
+  {
     icon: "Search",
     title: "SEO ოპტიმიზაცია",
     description:

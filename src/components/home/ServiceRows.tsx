@@ -2,17 +2,18 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Code, Search, Headphones, Palette, Smartphone, Megaphone } from "lucide-react";
+import { ArrowUpRight, Code, Search, Headphones, Palette, Smartphone, Megaphone, Bot } from "lucide-react";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const services = [
   { num: "01", name: "ვებ დეველოპმენტი", desc: "საიტები, რომლებიც ჩქარია — ისევე, როგორც შენი იდეა", href: "/services/web", icon: Code },
-  { num: "02", name: "SEO ოპტიმიზაცია", desc: "Google-ი გიყვარდეს — Google-მაც შეგიყვაროს", href: "/services/seo", icon: Search },
-  { num: "03", name: "ტექნიკური მხარდაჭერა", desc: "ძილიც მშვიდად — ჩვენ ვუყურებთ სერვერს", href: "/services/support", icon: Headphones },
-  { num: "04", name: "UI/UX დიზაინი", desc: "ლამაზი რომ არის — კარგია. მოსახერხებელი რომ არის — უკეთესია", href: "/services/web", icon: Palette },
-  { num: "05", name: "მობილური აპები", desc: "ჯიბეში ჩასადები ბიზნესი", href: "/services/web", icon: Smartphone },
-  { num: "06", name: "ციფრული მარკეტინგი", desc: "რომ გესმოდეთ ინტერნეტის ენა", href: "/services/seo", icon: Megaphone },
+  { num: "02", name: "AI ავტომატიზაცია", desc: "ხელოვნური ინტელექტი, რომელიც შენს ბიზნესს ავტომატურად ამუშავებს", href: "/services/ai", icon: Bot },
+  { num: "03", name: "SEO ოპტიმიზაცია", desc: "Google-ი გიყვარდეს — Google-მაც შეგიყვაროს", href: "/services/seo", icon: Search },
+  { num: "04", name: "ტექნიკური მხარდაჭერა", desc: "ძილიც მშვიდად — ჩვენ ვუყურებთ სერვერს", href: "/services/support", icon: Headphones },
+  { num: "05", name: "UI/UX დიზაინი", desc: "ლამაზი რომ არის — კარგია. მოსახერხებელი რომ არის — უკეთესია", href: "/services/web", icon: Palette },
+  { num: "06", name: "მობილური აპები", desc: "ჯიბეში ჩასადები ბიზნესი", href: "/services/web", icon: Smartphone },
+  { num: "07", name: "ციფრული მარკეტინგი", desc: "რომ გესმოდეთ ინტერნეტის ენა", href: "/services/seo", icon: Megaphone },
 ];
 
 export function ServiceRows() {
