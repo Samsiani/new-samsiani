@@ -51,7 +51,7 @@ export default function RootLayout({
     <html lang="ka" className={font.variable} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <ThemeScript />
-        <script dangerouslySetInnerHTML={{ __html: `window.addEventListener('load',function(){if(window.scrollY>0&&window.scrollY<150)window.scrollTo(0,0)})` }} />
+        <script dangerouslySetInnerHTML={{ __html: `if('scrollRestoration' in history){var s=sessionStorage.getItem('__scrollY');if(s&&parseInt(s)>150){window.addEventListener('DOMContentLoaded',function(){window.scrollTo(0,parseInt(s))})}else{history.scrollRestoration='manual';window.scrollTo(0,0)}window.addEventListener('beforeunload',function(){sessionStorage.setItem('__scrollY',String(window.scrollY))})}` }} />
       </head>
       <body className="grain font-sans">
         <ThemeProvider>
