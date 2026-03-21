@@ -51,6 +51,7 @@ export default function RootLayout({
     <html lang="ka" className={font.variable} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <ThemeScript />
+        <script dangerouslySetInnerHTML={{ __html: `window.addEventListener('load',function(){if(window.scrollY>0&&window.scrollY<150)window.scrollTo(0,0)})` }} />
       </head>
       <body className="grain font-sans">
         <ThemeProvider>
