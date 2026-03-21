@@ -36,7 +36,7 @@ export function NewsletterForm({ className }: { className?: string }) {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="ელ-ფოსტა"
           className={cn(
-            "w-full rounded-full border bg-transparent px-4 py-2.5 text-base outline-none transition-colors form-input-hover",
+            "w-full border bg-transparent px-4 py-2.5 text-base outline-none transition-colors form-input-hover",
             error ? "border-[var(--c-accent)]" : "border-[var(--c-border)] focus:border-[var(--c-accent)]"
           )}
         />
@@ -45,11 +45,11 @@ export function NewsletterForm({ className }: { className?: string }) {
       <button
         type="submit"
         disabled={loading}
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--c-accent)] text-white transition-colors hover:bg-[var(--c-accent-hover)] disabled:opacity-50 cursor-pointer"
+        className="flex h-10 w-10 shrink-0 items-center justify-center bg-[var(--c-accent)] text-white transition-colors hover:bg-[var(--c-accent-hover)] disabled:opacity-50 cursor-pointer"
         aria-label="Subscribe"
       >
         {loading ? (
-          <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+          <div className="h-4 w-4 animate-spin border-2 border-white border-t-transparent" />
         ) : (
           <Send size={14} />
         )}

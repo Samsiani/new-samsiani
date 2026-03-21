@@ -89,7 +89,7 @@ export default function AboutPage() {
           </ScrollReveal>
 
           <ScrollReveal direction="right">
-            <div className="relative overflow-hidden aspect-[3/4] rounded-xl bg-[var(--c-bg2)]">
+            <div className="relative overflow-hidden aspect-[3/4] bg-[var(--c-bg2)]">
               <motion.img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
                 alt="სამსიანის გუნდი სამუშაო პროცესში"
@@ -147,7 +147,7 @@ export default function AboutPage() {
                   className="relative flex-1 min-w-[180px] pr-8"
                 >
                   <div className="relative">
-                    <div className="w-6 h-6 rounded-full border-2 border-[var(--c-accent)] bg-[var(--c-bg)] relative z-10" />
+                    <div className="w-3 h-3 rounded-full border-2 border-[var(--c-accent)] bg-[var(--c-bg)] relative z-10" />
                     <p className="mt-4 text-2xl font-black">{m.year}</p>
                     <p className="mt-2 text-sm text-[var(--c-fg-muted)] leading-relaxed max-w-[200px]">
                       {m.event}
@@ -172,7 +172,7 @@ export default function AboutPage() {
             {team.map((member, i) => (
               <ScrollReveal key={member.name} delay={i * 0.15}>
                 <div className="flex flex-col items-center text-center">
-                  <img src={member.img} alt={member.name} loading="lazy" className="w-32 h-32 rounded-full object-cover mb-5" />
+                  <img src={member.img} alt={member.name} loading="lazy" className="w-32 h-32 object-cover mb-5" />
                   <h3 className="text-lg font-bold">{member.name}</h3>
                   <p className="text-sm text-[var(--c-fg-muted)] mt-1">
                     {member.role}

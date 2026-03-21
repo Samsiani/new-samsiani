@@ -138,7 +138,7 @@ function TimelineStep({
     >
       {/* Step number */}
       <motion.div
-        className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 text-sm font-bold"
+        className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center border-2 text-sm font-bold"
         animate={
           isInView
             ? {
@@ -260,7 +260,7 @@ export default function WebDevelopmentPage() {
               {techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-[var(--c-border)] bg-[var(--c-surface)] px-5 py-2.5 text-sm font-medium transition-colors hover:border-[var(--c-accent)] hover:text-[var(--c-accent)]"
+                  className="border border-[var(--c-border)] bg-[var(--c-surface)] px-5 py-2.5 text-sm font-medium transition-colors hover:border-[var(--c-accent)] hover:text-[var(--c-accent)]"
                 >
                   {tech}
                 </span>

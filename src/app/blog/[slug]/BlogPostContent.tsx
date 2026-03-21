@@ -73,7 +73,7 @@ export function BlogPostContent({ slug }: { slug: string }) {
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
-          <span className="inline-block rounded-full bg-[var(--c-accent)]/10 px-3 py-1 text-xs font-semibold text-[var(--c-accent)]">
+          <span className="inline-block bg-[var(--c-accent)]/10 px-3 py-1 text-xs font-semibold text-[var(--c-accent)]">
             {post.categoryLabel}
           </span>
         </ScrollReveal>
@@ -84,7 +84,7 @@ export function BlogPostContent({ slug }: { slug: string }) {
 
         <ScrollReveal delay={0.2}>
           <div className="mt-6 flex items-center gap-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--c-accent)]/10 text-sm font-bold text-[var(--c-accent)]">
+            <div className="flex h-10 w-10 items-center justify-center bg-[var(--c-accent)]/10 text-sm font-bold text-[var(--c-accent)]">
               გს
             </div>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-[var(--c-fg-muted)]">
@@ -98,7 +98,7 @@ export function BlogPostContent({ slug }: { slug: string }) {
         </ScrollReveal>
 
         <ScrollReveal delay={0.25}>
-          <div className="mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl">
+          <div className="mt-10 aspect-[16/9] w-full overflow-hidden">
             <img src={post.image || POST_IMAGES[post.slug]} alt={post.title} loading="lazy" className="h-full w-full object-cover" />
           </div>
         </ScrollReveal>
@@ -123,7 +123,7 @@ export function BlogPostContent({ slug }: { slug: string }) {
                 <a
                   key={s.label}
                   href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--c-border)] transition-colors hover:border-[var(--c-accent)] hover:text-[var(--c-accent)]"
+                  className="flex h-10 w-10 items-center justify-center border border-[var(--c-border)] transition-colors hover:border-[var(--c-accent)] hover:text-[var(--c-accent)]"
                   aria-label={`${s.label}-ზე გაზიარება`}
                 >
                   <s.icon size={16} />
@@ -131,7 +131,7 @@ export function BlogPostContent({ slug }: { slug: string }) {
               ))}
               <button
                 onClick={handleCopyLink}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--c-border)] transition-colors hover:border-[var(--c-accent)] hover:text-[var(--c-accent)] cursor-pointer"
+                className="flex h-10 w-10 items-center justify-center border border-[var(--c-border)] transition-colors hover:border-[var(--c-accent)] hover:text-[var(--c-accent)] cursor-pointer"
                 aria-label="ლინკის კოპირება"
               >
                 <LinkIcon size={16} />
@@ -142,8 +142,8 @@ export function BlogPostContent({ slug }: { slug: string }) {
 
         {/* Author card */}
         <ScrollReveal delay={0.1}>
-          <div className="mt-10 flex gap-5 rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] p-6">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[var(--c-accent)]/10 text-lg font-bold text-[var(--c-accent)]">
+          <div className="mt-10 flex gap-5 border border-[var(--c-border)] bg-[var(--c-surface)] p-6">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center bg-[var(--c-accent)]/10 text-lg font-bold text-[var(--c-accent)]">
               გს
             </div>
             <div>
@@ -162,7 +162,7 @@ export function BlogPostContent({ slug }: { slug: string }) {
                 <Link
                   key={rp.slug}
                   href={`/blog/${rp.slug}`}
-                  className="group rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] p-5 transition-colors hover:border-[var(--c-accent)]/40"
+                  className="group border border-[var(--c-border)] bg-[var(--c-surface)] p-5 transition-colors hover:border-[var(--c-accent)]/40"
                 >
                   <span className="text-xs font-semibold text-[var(--c-accent)]">{rp.categoryLabel}</span>
                   <h3 className="mt-2 text-sm font-bold leading-snug transition-colors group-hover:text-[var(--c-accent)]">
@@ -181,7 +181,7 @@ export function BlogPostContent({ slug }: { slug: string }) {
             {prevPost ? (
               <Link
                 href={`/blog/${prevPost.slug}`}
-                className="group flex items-center gap-3 rounded-xl border border-[var(--c-border)] p-5 transition-colors hover:border-[var(--c-accent)]/40"
+                className="group flex items-center gap-3 border border-[var(--c-border)] p-5 transition-colors hover:border-[var(--c-accent)]/40"
               >
                 <ArrowLeft size={16} className="shrink-0 text-[var(--c-fg-muted)] transition-transform group-hover:-translate-x-1" />
                 <div className="min-w-0">
@@ -193,7 +193,7 @@ export function BlogPostContent({ slug }: { slug: string }) {
             {nextPost ? (
               <Link
                 href={`/blog/${nextPost.slug}`}
-                className="group flex items-center justify-end gap-3 rounded-xl border border-[var(--c-border)] p-5 text-right transition-colors hover:border-[var(--c-accent)]/40"
+                className="group flex items-center justify-end gap-3 border border-[var(--c-border)] p-5 text-right transition-colors hover:border-[var(--c-accent)]/40"
               >
                 <div className="min-w-0">
                   <p className="text-xs text-[var(--c-fg-muted)]">შემდეგი სტატია</p>

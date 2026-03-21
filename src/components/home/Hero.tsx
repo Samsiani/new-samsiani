@@ -25,7 +25,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0">
         {/* Circle */}
         <div
-          className="absolute left-[8%] top-[15%] h-32 w-32 rounded-full border-2 border-dashed border-[var(--c-accent)]/20"
+          className="absolute left-[8%] top-[15%] h-32 w-32 border-2 border-dashed border-[var(--c-accent)]/20"
         />
         {/* Asterisk */}
         <span

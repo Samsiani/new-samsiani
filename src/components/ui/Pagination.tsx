@@ -20,7 +20,7 @@ export function Pagination({ currentPage, totalPages, onPageChange, className }:
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--c-border)] transition-colors hover:border-[var(--c-accent)] disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
+        className="flex h-10 w-10 items-center justify-center border border-[var(--c-border)] transition-colors hover:border-[var(--c-accent)] disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
         aria-label="Previous page"
       >
         <ChevronLeft size={16} />
@@ -30,7 +30,7 @@ export function Pagination({ currentPage, totalPages, onPageChange, className }:
           key={page}
           onClick={() => onPageChange(page)}
           className={cn(
-            "flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-colors cursor-pointer",
+            "flex h-10 w-10 items-center justify-center text-sm font-medium transition-colors cursor-pointer",
             page === currentPage
               ? "bg-[var(--c-accent)] text-white"
               : "hover:bg-[var(--c-bg2)]"
@@ -43,7 +43,7 @@ export function Pagination({ currentPage, totalPages, onPageChange, className }:
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--c-border)] transition-colors hover:border-[var(--c-accent)] disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
+        className="flex h-10 w-10 items-center justify-center border border-[var(--c-border)] transition-colors hover:border-[var(--c-accent)] disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
         aria-label="Next page"
       >
         <ChevronRight size={16} />

@@ -51,12 +51,12 @@ export function BlogPreview() {
         {/* Large post */}
         <ScrollReveal>
           <Link href={`/blog/${previewPosts[0].slug}`} className="group block">
-            <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--c-bg2)]">
+            <div className="aspect-[4/3] overflow-hidden bg-[var(--c-bg2)]">
               <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80" alt="ვებ დეველოპმენტის ტრენდები" loading="lazy" className="h-full w-full object-cover grayscale-[30%] transition-[filter] duration-500 group-hover:grayscale-0" />
             </div>
             <div className="mt-4">
               <div className="flex items-center gap-3">
-                <span className="rounded-full bg-[var(--c-accent)]/10 px-3 py-1 text-xs font-medium text-[var(--c-accent)]">
+                <span className="bg-[var(--c-accent)]/10 px-3 py-1 text-xs font-medium text-[var(--c-accent)]">
                   {previewPosts[0].category}
                 </span>
                 <time className="font-mono text-xs text-[var(--c-fg-muted)]">
@@ -75,12 +75,12 @@ export function BlogPreview() {
           {previewPosts.slice(1).map((post, i) => (
             <ScrollReveal key={post.slug} delay={0.1 * (i + 1)}>
               <Link href={`/blog/${post.slug}`} className="group flex gap-4">
-                <div className="h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-[var(--c-bg2)]">
+                <div className="h-24 w-24 shrink-0 overflow-hidden bg-[var(--c-bg2)]">
                   <img src={smallPostImages[i]} alt={post.title} loading="lazy" className="h-full w-full object-cover grayscale-[30%] transition-[filter] duration-500 group-hover:grayscale-0" />
                 </div>
                 <div>
                   <div className="flex items-center gap-3">
-                    <span className="rounded-full bg-[var(--c-accent)]/10 px-3 py-1 text-xs font-medium text-[var(--c-accent)]">
+                    <span className="bg-[var(--c-accent)]/10 px-3 py-1 text-xs font-medium text-[var(--c-accent)]">
                       {post.category}
                     </span>
                     <time className="font-mono text-xs text-[var(--c-fg-muted)]">

@@ -31,7 +31,7 @@ export function FilterBar({ options, defaultValue, onFilterChange, className }: 
           key={opt.value}
           onClick={() => handleClick(opt.value)}
           className={cn(
-            "relative rounded-full px-5 py-2 text-sm font-medium transition-colors cursor-pointer",
+            "relative px-5 py-2 text-sm font-medium transition-colors cursor-pointer",
             active === opt.value
               ? "text-white"
               : "text-[var(--c-fg-muted)] hover:text-[var(--c-fg)]"
@@ -40,7 +40,7 @@ export function FilterBar({ options, defaultValue, onFilterChange, className }: 
           {active === opt.value && (
             <motion.div
               layoutId="filter-pill"
-              className="absolute inset-0 rounded-full bg-[var(--c-accent)]"
+              className="absolute inset-0 bg-[var(--c-accent)]"
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
             />
           )}

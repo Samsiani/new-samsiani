@@ -158,7 +158,7 @@ function ProcessStep({
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <motion.div
-        className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 text-sm font-bold"
+        className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center border-2 text-sm font-bold"
         animate={
           isInView
             ? {
@@ -263,8 +263,8 @@ export default function AIServicesPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => (
               <ScrollReveal key={service.title} delay={i * 0.08} className="h-full">
-                <div className="group h-full rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] p-7 transition-all duration-300 hover:border-[var(--c-accent)] hover:shadow-lg">
-                  <div className="mb-5 inline-flex rounded-lg bg-[var(--c-bg2)] p-3 transition-colors duration-300 group-hover:bg-[var(--c-accent)]/10">
+                <div className="group h-full border border-[var(--c-border)] bg-[var(--c-surface)] p-7 transition-all duration-300 hover:border-[var(--c-accent)] hover:shadow-lg">
+                  <div className="mb-5 inline-flex bg-[var(--c-bg2)] p-3 transition-colors duration-300 group-hover:bg-[var(--c-accent)]/10">
                     <service.icon
                       size={28}
                       className="text-[var(--c-accent)]"
@@ -293,7 +293,7 @@ export default function AIServicesPage() {
           <div className="grid gap-8 md:grid-cols-3">
             {useCases.map((useCase, i) => (
               <ScrollReveal key={useCase.industry} delay={i * 0.1}>
-                <div className="rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] p-6">
+                <div className="border border-[var(--c-border)] bg-[var(--c-surface)] p-6">
                   <h3 className="mb-4 text-lg font-bold">{useCase.industry}</h3>
                   <ul className="space-y-2">
                     {useCase.examples.map((example) => (
@@ -349,7 +349,7 @@ export default function AIServicesPage() {
               {techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-[var(--c-border)] bg-[var(--c-surface)] px-5 py-2.5 text-sm font-medium transition-colors hover:border-[var(--c-accent)] hover:text-[var(--c-accent)]"
+                  className="border border-[var(--c-border)] bg-[var(--c-surface)] px-5 py-2.5 text-sm font-medium transition-colors hover:border-[var(--c-accent)] hover:text-[var(--c-accent)]"
                 >
                   {tech}
                 </span>

@@ -180,7 +180,7 @@
   background: var(--c-accent);
   transform: scaleX(0) rotate(-0.5deg);
   transform-origin: right;
-  border-radius: 2px;
+  border-radius: 0;
   transition: transform var(--duration-normal) var(--ease-apple);
 }
 .link-underline:hover::after {
@@ -192,12 +192,12 @@
 
 /* --- Sketch border --- */
 .sketch-border {
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border-radius: 0;
   border: 2px solid var(--c-fg);
 }
 
 .sketch-border-accent {
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border-radius: 0;
   border: 2px solid var(--c-accent);
 }
 
@@ -224,7 +224,7 @@
   width: 80px;
   height: 24px;
   background: rgba(200, 190, 170, 0.5);
-  border-radius: 2px;
+  border-radius: 0;
   z-index: 1;
 }
 
@@ -308,7 +308,7 @@
   padding: 0.75rem 1.5rem;
   background: var(--c-accent);
   color: white;
-  border-radius: 0 0 0.5rem 0.5rem;
+  border-radius: 0;
   font-weight: 600;
   transition: top 0.2s;
 }

@@ -28,7 +28,7 @@ const sizes = {
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "filled", size = "md", href, children, ...props }, ref) => {
     const classes = cn(
-      "group relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--c-accent)] disabled:opacity-50 disabled:pointer-events-none cursor-pointer",
+      "group relative overflow-hidden inline-flex items-center justify-center gap-2 font-medium tracking-wide transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--c-accent)] disabled:opacity-50 disabled:pointer-events-none cursor-pointer",
       variants[variant],
       sizes[size],
       className

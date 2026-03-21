@@ -63,7 +63,7 @@ export function SplitSection() {
           ].map((stat, i) => (
             <ScrollReveal key={stat.label} delay={0.12 * i} direction="right">
               <motion.div
-                className="flex items-center gap-5 rounded-2xl border border-[var(--c-border)] bg-[var(--c-surface)] p-6"
+                className="flex items-center gap-5 border border-[var(--c-border)] bg-[var(--c-surface)] p-6"
                 whileHover={{ y: -2 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
