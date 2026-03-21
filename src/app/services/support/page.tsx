@@ -257,8 +257,8 @@ export default function SupportPage() {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => (
-              <ScrollReveal key={service.title} delay={i * 0.1}>
-                <div className="group rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] p-7 transition-all duration-300 hover:border-[var(--c-accent)] hover:shadow-lg">
+              <ScrollReveal key={service.title} delay={i * 0.1} className="h-full">
+                <div className="group h-full rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] p-7 transition-all duration-300 hover:border-[var(--c-accent)] hover:shadow-lg">
                   <div className="mb-5 inline-flex rounded-lg bg-[var(--c-bg2)] p-3 transition-transform duration-300 group-hover:-translate-y-1">
                     <service.icon
                       size={28}
