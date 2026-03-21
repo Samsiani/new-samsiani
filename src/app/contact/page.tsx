@@ -131,7 +131,7 @@ export default function ContactPage() {
               <Button type="submit" disabled={loading} size="lg">
                 {loading ? (
                   <>
-                    <div className="h-4 w-4 animate-spin border-2 border-white border-t-transparent" />
+                    <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
                     იგზავნება...
                   </>
                 ) : (
@@ -148,9 +148,9 @@ export default function ContactPage() {
               {contactInfo.map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-start gap-4 border border-[var(--c-border)] p-5 transition-colors hover:border-[var(--c-accent)]/40"
+                  className="flex items-start gap-4 rounded-xl border border-[var(--c-border)] p-5 transition-colors hover:border-[var(--c-accent)]/40"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[var(--c-accent)]/10">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--c-accent)]/10">
                     <item.icon size={18} className="text-[var(--c-accent)]" />
                   </div>
                   <div className="flex-1">
@@ -170,7 +170,7 @@ export default function ContactPage() {
               ))}
 
               {/* Map */}
-              <div className="group aspect-[4/3] overflow-hidden bg-[var(--c-bg2)]">
+              <div className="group aspect-[4/3] overflow-hidden rounded-xl bg-[var(--c-bg2)]">
                 <img
                   src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800&q=80"
                   alt="თბილისი, საქართველო"
@@ -180,7 +180,7 @@ export default function ContactPage() {
               </div>
 
               {/* Office hours */}
-              <div className="flex items-center gap-3 border border-[var(--c-border)] p-5">
+              <div className="flex items-center gap-3 rounded-xl border border-[var(--c-border)] p-5">
                 <Clock size={18} className="text-[var(--c-fg-muted)]" />
                 <div>
                   <p className="text-sm font-medium">სამუშაო საათები</p>
@@ -199,7 +199,7 @@ export default function ContactPage() {
                   <a
                     key={s.label}
                     href="#"
-                    className="flex h-10 w-10 items-center justify-center border border-[var(--c-border)] transition-colors hover:border-[var(--c-accent)] hover:text-[var(--c-accent)]"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--c-border)] transition-colors hover:border-[var(--c-accent)] hover:text-[var(--c-accent)]"
                     aria-label={s.label}
                   >
                     <s.icon size={16} />

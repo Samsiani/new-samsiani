@@ -31,9 +31,13 @@ export function ServiceRows() {
               ყველაფერი, რაც <span className="scratchy-underline">ციფრულია</span>
             </h2>
           </div>
-          <div className="hidden md:block">
+          <motion.div
+            className="hidden md:block"
+            animate={{ rotate: [0, 10, -10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
             <Palette size={40} className="text-[var(--c-accent)] opacity-30" />
-          </div>
+          </motion.div>
         </div>
       </ScrollReveal>
 
@@ -48,7 +52,7 @@ export function ServiceRows() {
             >
               {/* Hover bg */}
               <motion.div
-                className="absolute inset-0 bg-[var(--c-accent)]"
+                className="absolute inset-0 rounded-lg bg-[var(--c-accent)]"
                 initial={false}
                 animate={{ scaleY: hovered === i ? 1 : 0 }}
                 transition={{ duration: 0.35, ease: [0.77, 0, 0.175, 1] }}

@@ -19,7 +19,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           ref={ref}
           {...props}
           className={cn(
-            "peer w-full appearance-none border bg-transparent px-4 pb-2 pt-6 text-base outline-none transition-colors cursor-pointer form-input-hover",
+            "peer w-full appearance-none rounded-lg border bg-transparent px-4 pb-2 pt-6 text-base outline-none transition-colors cursor-pointer form-input-hover",
             error
               ? "border-[var(--c-accent)] focus:border-[var(--c-accent)]"
               : "border-[var(--c-border)] focus:border-[var(--c-accent)]",

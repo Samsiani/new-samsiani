@@ -28,7 +28,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           }}
           placeholder=" "
           className={cn(
-            "peer w-full border bg-transparent px-4 pb-2 pt-6 text-base outline-none transition-colors form-input-hover",
+            "peer w-full rounded-lg border bg-transparent px-4 pb-2 pt-6 text-base outline-none transition-colors form-input-hover",
             error
               ? "border-[var(--c-accent)] focus:border-[var(--c-accent)]"
               : "border-[var(--c-border)] focus:border-[var(--c-accent)]",

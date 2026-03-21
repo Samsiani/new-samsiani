@@ -69,7 +69,7 @@ export default function FaqPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="მოძებნეთ კითხვა..."
-                className="w-full border border-[var(--c-border)] bg-[var(--c-surface)] py-3 pl-11 pr-4 text-[16px] text-[var(--c-fg)] placeholder:text-[var(--c-fg-muted)] outline-none transition-colors focus:border-[var(--c-accent)] form-input-hover"
+                className="w-full rounded-full border border-[var(--c-border)] bg-[var(--c-surface)] py-3 pl-11 pr-4 text-[16px] text-[var(--c-fg)] placeholder:text-[var(--c-fg-muted)] outline-none transition-colors focus:border-[var(--c-accent)] form-input-hover"
               />
             </div>
           </ScrollReveal>

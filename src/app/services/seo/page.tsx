@@ -145,8 +145,8 @@ export default function SeoPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             {checklistItems.map((item, i) => (
               <ScrollReveal key={item} delay={i * 0.06} direction="up">
-                <div className="flex items-center gap-4 border border-[var(--c-border)] bg-[var(--c-surface)] px-5 py-4 transition-colors hover:border-[var(--c-accent)]">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-[var(--c-accent)] text-xs font-bold text-white">
+                <div className="flex items-center gap-4 rounded-lg border border-[var(--c-border)] bg-[var(--c-surface)] px-5 py-4 transition-colors hover:border-[var(--c-accent)]">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--c-accent)] text-xs font-bold text-white">
                     &#10003;
                   </span>
                   <span className="text-sm font-medium">{item}</span>
@@ -169,7 +169,7 @@ export default function SeoPage() {
           <div className="grid gap-12 md:grid-cols-3">
             {metrics.map((metric, i) => (
               <ScrollReveal key={metric.label} delay={i * 0.15}>
-                <div className="border border-[var(--c-border)] bg-[var(--c-surface)] p-8 text-center">
+                <div className="rounded-2xl border border-[var(--c-border)] bg-[var(--c-surface)] p-8 text-center">
                   <p className="text-sm font-medium uppercase tracking-wider text-[var(--c-fg-muted)]">
                     {metric.label}
                   </p>
@@ -189,10 +189,10 @@ export default function SeoPage() {
 
                   {/* Progress bar */}
                   <div className="mt-6">
-                    <div className="h-2 w-full overflow-hidden bg-[var(--c-border)]">
+                    <div className="h-2 w-full overflow-hidden rounded-full bg-[var(--c-border)]">
                       <ScrollReveal>
                         <div
-                          className="h-full bg-[var(--c-accent)] transition-all duration-1000"
+                          className="h-full rounded-full bg-[var(--c-accent)] transition-all duration-1000"
                           style={{ width: `${metric.percent}%` }}
                         />
                       </ScrollReveal>

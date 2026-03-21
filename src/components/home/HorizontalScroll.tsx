@@ -48,7 +48,7 @@ export function HorizontalScroll() {
               className="group relative block w-[80vw] shrink-0 sm:w-[60vw] md:w-[45vw]"
               data-cursor="ნახვა"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-[var(--c-bg2)]">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-[var(--c-bg2)]">
                 <img src={projectImages[project.slug]} alt={project.name} loading="lazy" className="h-full w-full object-cover grayscale-[30%] transition-[filter] duration-500 group-hover:grayscale-0" />
                 {/* Bottom gradient */}
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/70 to-transparent" />

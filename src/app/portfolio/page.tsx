@@ -115,7 +115,7 @@ export default function PortfolioPage() {
                   >
                     <Link href={`/portfolio/${project.slug}`} className="group block">
                       <div
-                        className={`relative overflow-hidden bg-[var(--c-bg2)] ${
+                        className={`relative overflow-hidden rounded-2xl bg-[var(--c-bg2)] ${
                           isWide ? "aspect-[16/9]" : "aspect-[4/5]"
                         }`}
                       >

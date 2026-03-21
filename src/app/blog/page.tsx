@@ -170,13 +170,13 @@ export default function BlogPage() {
                         href={`/blog/${featured.slug}`}
                         className="group mb-10 block"
                       >
-                        <div className="overflow-hidden bg-[var(--c-bg2)]">
+                        <div className="overflow-hidden rounded-2xl bg-[var(--c-bg2)]">
                           <div className="aspect-[16/9] w-full overflow-hidden">
                             <img src={featured.image || POST_IMAGES[featured.slug] || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80"} alt={featured.title} loading="lazy" className="h-full w-full object-cover grayscale-[30%] transition-[filter] duration-500 group-hover:grayscale-0" />
                           </div>
                           <div className="p-6 md:p-8">
                             <div className="flex items-center gap-3">
-                              <span className="bg-[var(--c-accent)]/10 px-3 py-1 text-xs font-semibold text-[var(--c-accent)]">
+                              <span className="rounded-full bg-[var(--c-accent)]/10 px-3 py-1 text-xs font-semibold text-[var(--c-accent)]">
                                 {CATEGORY_MAP[featured.category]}
                               </span>
                               <span className="flex items-center gap-1.5 text-xs text-[var(--c-fg-muted)]">
@@ -214,13 +214,13 @@ export default function BlogPage() {
                               i === 0 ? "md:col-span-3" : "md:col-span-2"
                             )}
                           >
-                            <div className="h-full overflow-hidden border border-[var(--c-border)] bg-[var(--c-surface)] transition-colors hover:border-[var(--c-accent)]/40">
+                            <div className="h-full overflow-hidden rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] transition-colors hover:border-[var(--c-accent)]/40">
                               <div className="aspect-[16/10] w-full overflow-hidden">
                                 <img src={post.image || POST_IMAGES[post.slug] || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80"} alt={post.title} loading="lazy" className="h-full w-full object-cover grayscale-[30%] transition-[filter] duration-500 group-hover:grayscale-0" />
                               </div>
                               <div className="p-5">
                                 <div className="flex items-center gap-3">
-                                  <span className="bg-[var(--c-accent)]/10 px-3 py-1 text-xs font-semibold text-[var(--c-accent)]">
+                                  <span className="rounded-full bg-[var(--c-accent)]/10 px-3 py-1 text-xs font-semibold text-[var(--c-accent)]">
                                     {CATEGORY_MAP[post.category]}
                                   </span>
                                   <span className="text-xs text-[var(--c-fg-muted)]">
@@ -267,7 +267,7 @@ export default function BlogPage() {
                       value={searchInput}
                       onChange={(e) => setSearchInput(e.target.value)}
                       placeholder="მინ. 3 სიმბოლო..."
-                      className="w-full border border-[var(--c-border)] bg-transparent py-2.5 pr-4 pl-10 text-base outline-none transition-colors focus:border-[var(--c-accent)] form-input-hover"
+                      className="w-full rounded-full border border-[var(--c-border)] bg-transparent py-2.5 pr-4 pl-10 text-base outline-none transition-colors focus:border-[var(--c-accent)] form-input-hover"
                     />
                   </div>
                 </div>
@@ -284,7 +284,7 @@ export default function BlogPage() {
                         href={`/blog/${post.slug}`}
                         className="group flex gap-3"
                       >
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center bg-[var(--c-bg2)] text-xs font-bold text-[var(--c-fg-muted)]">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--c-bg2)] text-xs font-bold text-[var(--c-fg-muted)]">
                           {i + 1}
                         </span>
                         <div>
@@ -301,7 +301,7 @@ export default function BlogPage() {
                 </div>
 
                 {/* Newsletter */}
-                <div className="border border-[var(--c-border)] bg-[var(--c-surface)] p-5">
+                <div className="rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] p-5">
                   <h3 className="mb-1 text-sm font-bold">
                     გამოიწერეთ სიახლეები
                   </h3>

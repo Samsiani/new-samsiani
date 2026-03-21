@@ -77,12 +77,12 @@ export function Header() {
                         transition={{ duration: 0.15 }}
                         className="absolute left-0 top-full pt-2"
                       >
-                        <div className="min-w-[200px] border border-[var(--c-border)] bg-[var(--c-surface)] p-2 shadow-lg">
+                        <div className="min-w-[200px] rounded-lg border border-[var(--c-border)] bg-[var(--c-surface)] p-2 shadow-lg">
                           {link.children.map((child) => (
                             <Link
                               key={child.href}
                               href={child.href}
-                              className="block px-3 py-2 text-sm transition-colors hover:bg-[var(--c-bg2)]"
+                              className="block rounded-md px-3 py-2 text-sm transition-colors hover:bg-[var(--c-bg2)]"
                             >
                               {child.label}
                             </Link>
@@ -100,7 +100,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <button
               onClick={toggle}
-              className="flex h-11 w-11 items-center justify-center transition-colors hover:bg-[var(--c-bg2)] cursor-pointer"
+              className="flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-[var(--c-bg2)] cursor-pointer"
               aria-label="Toggle theme"
             >
               <motion.div

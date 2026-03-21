@@ -67,7 +67,7 @@
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);  /* Subtle overshoot */
   --ease-in:     cubic-bezier(0.4, 0, 1, 1);         /* Accelerate in */
   --ease-out:    cubic-bezier(0, 0, 0.2, 1);         /* Decelerate out */
-  --ease-sketchy: cubic-bezier(0.4, 0, 0.2, 1);       /* Replaced with smooth in-out */
+  --ease-sketchy: cubic-bezier(0.77, 0, 0.175, 1);   /* Original sketchy feel — kept */
 
   /* === DURATION SCALE === */
   --duration-fast:   200ms;
@@ -180,7 +180,7 @@
   background: var(--c-accent);
   transform: scaleX(0) rotate(-0.5deg);
   transform-origin: right;
-  border-radius: 0;
+  border-radius: 2px;
   transition: transform var(--duration-normal) var(--ease-apple);
 }
 .link-underline:hover::after {
@@ -188,16 +188,49 @@
   transform-origin: left;
 }
 
-/* --- Glitch / Wiggle / Float removed for solid, stable feel --- */
+/* --- Glitch text effect — subtler, more professional --- */
+@keyframes glitch {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  15%       { clip-path: inset(25% 0 55% 0); transform: translate(-1.5px, 0.5px); }
+  30%       { clip-path: inset(60% 0 15% 0); transform: translate(1.5px, -0.5px); }
+  45%       { clip-path: inset(10% 0 65% 0); transform: translate(-1px, 1px); }
+  60%       { clip-path: inset(45% 0 25% 0); transform: translate(1px, -1px); }
+  75%       { clip-path: inset(0 0 0 0); transform: translate(0); }
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.5s var(--ease-smooth);
+}
+
+/* --- Wiggle --- */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25%       { transform: rotate(-1.5deg); }
+  75%       { transform: rotate(1.5deg); }
+}
+
+.hover-wiggle:hover {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+/* --- Float — slower = more luxurious --- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
 
 /* --- Sketch border --- */
 .sketch-border {
-  border-radius: 0;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   border: 2px solid var(--c-fg);
 }
 
 .sketch-border-accent {
-  border-radius: 0;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   border: 2px solid var(--c-accent);
 }
 
@@ -224,7 +257,7 @@
   width: 80px;
   height: 24px;
   background: rgba(200, 190, 170, 0.5);
-  border-radius: 0;
+  border-radius: 2px;
   z-index: 1;
 }
 
@@ -308,7 +341,7 @@
   padding: 0.75rem 1.5rem;
   background: var(--c-accent);
   color: white;
-  border-radius: 0;
+  border-radius: 0 0 0.5rem 0.5rem;
   font-weight: 600;
   transition: top 0.2s;
 }
@@ -332,39 +365,6 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--c-fg-muted);
-}
-
-/* ================================================
-   GLASSMORPHISM & BENTO
-   ================================================ */
-.glass {
-  background: rgba(255, 254, 249, 0.55);
-  backdrop-filter: blur(24px) saturate(1.8);
-  -webkit-backdrop-filter: blur(24px) saturate(1.8);
-  border: 1px solid rgba(221, 216, 207, 0.4);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.02),
-    0 4px 16px rgba(0, 0, 0, 0.04);
-}
-
-.dark .glass {
-  background: rgba(26, 24, 22, 0.55);
-  border-color: rgba(58, 54, 50, 0.4);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.1),
-    0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-.glass:hover {
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.03),
-    0 8px 32px rgba(0, 0, 0, 0.06);
-}
-
-.dark .glass:hover {
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.15),
-    0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 /* ================================================

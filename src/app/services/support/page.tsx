@@ -258,8 +258,8 @@ export default function SupportPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => (
               <ScrollReveal key={service.title} delay={i * 0.1} className="h-full">
-                <div className="group h-full border border-[var(--c-border)] bg-[var(--c-surface)] p-7 transition-all duration-300 hover:border-[var(--c-accent)] hover:shadow-lg">
-                  <div className="mb-5 inline-flex bg-[var(--c-bg2)] p-3 transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="group h-full rounded-xl border border-[var(--c-border)] bg-[var(--c-surface)] p-7 transition-all duration-300 hover:border-[var(--c-accent)] hover:shadow-lg">
+                  <div className="mb-5 inline-flex rounded-lg bg-[var(--c-bg2)] p-3 transition-transform duration-300 group-hover:-translate-y-1">
                     <service.icon
                       size={28}
                       className="text-[var(--c-accent)]"
@@ -292,14 +292,14 @@ export default function SupportPage() {
             {pricingTiers.map((tier, i) => (
               <ScrollReveal key={tier.name} delay={i * 0.15}>
                 <div
-                  className={`relative flex h-full flex-col border p-6 md:p-8 transition-shadow duration-300 hover:shadow-xl ${
+                  className={`relative flex h-full flex-col rounded-2xl border p-6 md:p-8 transition-shadow duration-300 hover:shadow-xl ${
                     tier.recommended
                       ? "border-[var(--c-accent)] bg-[var(--c-accent)]/5 shadow-lg"
                       : "border-[var(--c-border)] bg-[var(--c-surface)]"
                   }`}
                 >
                   {tier.recommended && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--c-accent)] px-4 py-1 text-xs font-bold text-white">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[var(--c-accent)] px-4 py-1 text-xs font-bold text-white">
                       რეკომენდებული
                     </span>
                   )}

@@ -110,7 +110,7 @@ export default async function ProjectPage({
 
           <ScrollReveal delay={0.2}>
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <span className="border border-[var(--c-border)] px-4 py-1.5 text-sm font-medium text-[var(--c-fg-muted)]">
+              <span className="rounded-full border border-[var(--c-border)] px-4 py-1.5 text-sm font-medium text-[var(--c-fg-muted)]">
                 {project.category}
               </span>
               <span className="text-sm text-[var(--c-fg-muted)]">{project.year}</span>
@@ -129,7 +129,7 @@ export default async function ProjectPage({
       <section className="px-6 pb-20">
         <ScrollReveal>
           <div className="mx-auto max-w-7xl">
-            <div className="aspect-[16/9] overflow-hidden bg-[var(--c-bg2)]">
+            <div className="aspect-[16/9] overflow-hidden rounded-xl bg-[var(--c-bg2)]">
               <img
                 src={PROJECT_IMAGES[slug]?.hero || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1400&q=80"}
                 alt={project.name}
@@ -183,7 +183,7 @@ export default async function ProjectPage({
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-[var(--c-surface)] px-3 py-1 text-xs font-medium"
+                        className="rounded-full bg-[var(--c-surface)] px-3 py-1 text-xs font-medium"
                       >
                         {tech}
                       </span>
@@ -201,17 +201,17 @@ export default async function ProjectPage({
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <ScrollReveal className="md:row-span-2">
-              <div className="group h-full min-h-[400px] overflow-hidden bg-[var(--c-bg2)]">
+              <div className="group h-full min-h-[400px] overflow-hidden rounded-xl bg-[var(--c-bg2)]">
                 <img src={PROJECT_IMAGES[slug]?.gallery[0] || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80"} alt={`${project.name} — სკრინშოტი 1`} loading="lazy" className="h-full w-full object-cover grayscale-[30%] transition-[filter] duration-500 group-hover:grayscale-0" />
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <div className="group aspect-[4/3] overflow-hidden bg-[var(--c-bg2)]">
+              <div className="group aspect-[4/3] overflow-hidden rounded-xl bg-[var(--c-bg2)]">
                 <img src={PROJECT_IMAGES[slug]?.gallery[1] || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80"} alt={`${project.name} — სკრინშოტი 2`} loading="lazy" className="h-full w-full object-cover grayscale-[30%] transition-[filter] duration-500 group-hover:grayscale-0" />
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="group aspect-[4/3] overflow-hidden bg-[var(--c-bg2)]">
+              <div className="group aspect-[4/3] overflow-hidden rounded-xl bg-[var(--c-bg2)]">
                 <img src={PROJECT_IMAGES[slug]?.gallery[2] || "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&q=80"} alt={`${project.name} — სკრინშოტი 3`} loading="lazy" className="h-full w-full object-cover grayscale-[30%] transition-[filter] duration-500 group-hover:grayscale-0" />
               </div>
             </ScrollReveal>

@@ -60,7 +60,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: 60, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center gap-3 border border-[var(--c-border)] bg-[var(--c-surface)] px-4 py-3 shadow-lg"
+              className="flex items-center gap-3 rounded-lg border border-[var(--c-border)] bg-[var(--c-surface)] px-4 py-3 shadow-lg"
             >
               {icons[t.type]}
               <span className="text-sm">{t.message}</span>
@@ -73,7 +73,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
               </button>
               <motion.div
                 className={cn(
-                  "absolute bottom-0 left-0 h-0.5",
+                  "absolute bottom-0 left-0 h-0.5 rounded-full",
                   t.type === "success" && "bg-green-500",
                   t.type === "error" && "bg-red-500",
                   t.type === "info" && "bg-blue-500"
